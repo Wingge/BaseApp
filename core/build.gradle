@@ -63,10 +63,12 @@ dependencies {
     compile rootProject.ext.libGlide
 
     //内存泄漏检查，请二选一
+    testCompile rootProject.ext.debugDependencies.leakCanary
     debugCompile rootProject.ext.debugDependencies.leakCanary
     releaseCompile rootProject.ext.releaseDependencies.leakCanary
-    debugCompile rootProject.ext.debugDependencies.blockCanary
-    releaseCompile rootProject.ext.releaseDependencies.blockCanary
+//    testCompile rootProject.ext.debugDependencies.blockCanary
+//    debugCompile rootProject.ext.debugDependencies.blockCanary
+//    releaseCompile rootProject.ext.releaseDependencies.blockCanary
 //
 ////    compile rootProject.ext.libLeanbackSupportV4
 ////
@@ -84,5 +86,6 @@ dependencies {
 //    compile rootProject.ext.libRxBindingRecyclerview
 //    //orm
 //    compile rootProject.ext.libRealm
+    compile rootProject.ext.libPlayServiceBasement
 
 }

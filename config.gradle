@@ -40,6 +40,9 @@ project.ext {
     libSupportDesign = "com.android.support:design:${supportLibraryVersion}"
     libSupportRecyclerview = "com.android.support:recyclerview-v7:${supportLibraryVersion}"
     libSupportV4 = "com.android.support:support-v4:${supportLibraryVersion}"
+    //play service基础包
+    libPlayServiceBasement = "com.google.android.gms:play-services-basement:${GooglePlayServicesClientLibraryVersion}"
+    //android tv支持包
     libLeanbackSupportV4 = "com.android.support:leanback-v17:${supportLibraryVersion}"
 
     libRxAndroid = "io.reactivex:rxandroid:1.2.0"
