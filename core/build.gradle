@@ -27,12 +27,21 @@ android {
         }
     }
 }
-
+//包括注释之所以有这么多包是因为需要测试proguard混淆是否通过
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    // 引用某一个特定的jar。
+    compile files('libs/abc.jar')
+    // 引用libs文件夹下除xx.jar以外所有的jar。
+    compile fileTree(dir: 'libs', include: ['*.jar'], exclude: ['abc.jar'])
+    // compile fileTree(dir: 'libs', include: ['*.jar'])
+    // 在测试环境下引用依赖。
     testCompile rootProject.ext.libJunit
-    // Android support libraries.
+    // 引用users-library。users-library作用是，在编译时使用，但是jar不会打包到apk中，由Android或Android上安装的服务提供需要的内容。
+    // 使用场景：
+    // 1. 使用Android的framework-classes.jar中的一些隐藏的API。
+    // 2. Google的服务框架或者其他服务框架。需要在AndroidMainFest.xml中配合uses-library使用。
     provided rootProject.ext.libJavaxAnnotation
+    // Android support libraries.
     compile rootProject.ext.libSupportAppcompat
     compile rootProject.ext.libSupportDesign
     compile rootProject.ext.libSupportRecyclerview
@@ -40,7 +49,7 @@ dependencies {
     //for 突破65535的限制
     compile rootProject.ext.libMultidex
 
-    //标注
+    //标注，使用apt插件
     apt rootProject.ext.libDaggerCompiler
     compile rootProject.ext.libDagger
 
@@ -53,16 +62,17 @@ dependencies {
 
     compile rootProject.ext.libGlide
 
-//    debugCompile rootProject.ext.debugDependencies.leakCanary
-//    releaseCompile rootProject.ext.releaseDependencies.leakCanary
-//    debugCompile rootProject.ext.debugDependencies.blockCanary
-//    releaseCompile rootProject.ext.releaseDependencies.blockCanary
-
-//    compile rootProject.ext.libLeanbackSupportV4
+    //内存泄漏检查，请二选一
+    debugCompile rootProject.ext.debugDependencies.leakCanary
+    releaseCompile rootProject.ext.releaseDependencies.leakCanary
+    debugCompile rootProject.ext.debugDependencies.blockCanary
+    releaseCompile rootProject.ext.releaseDependencies.blockCanary
 //
+////    compile rootProject.ext.libLeanbackSupportV4
+////
 //    compile rootProject.ext.libEventBus
 //    compile rootProject.ext.libJavaxAnnotation
-//
+////
 //    compile rootProject.ext.libGson
 //    compile rootProject.ext.libOkHttpLoggingInterceptor
 //

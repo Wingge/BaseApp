@@ -43,7 +43,6 @@
 -dontwarn sun.misc.Unsafe
 -dontwarn com.google.common.util.concurrent.RateLimiter
 ##okhttp
-#-keepattributes Signature
 #-keepattributes *Annotation*
 #-keep class okhttp3.** { *; }
 #-keep interface okhttp3.** { *; }
@@ -53,9 +52,14 @@
 # Retrofit 2.X
 -dontwarn retrofit2.**
 #-keep class retrofit2.** { *; }
-#-keepattributes Signature
 #-keepattributes Exceptions
-
 -keepclasseswithmembers class * {
     @retrofit2.http.* <methods>;
 }
+#realm
+-keep class io.realm.annotations.RealmModule
+-keep @io.realm.annotations.RealmModule class *
+-keep class io.realm.internal.Keep
+-keep @io.realm.internal.Keep class *
+-dontwarn javax.**
+-dontwarn io.realm.**

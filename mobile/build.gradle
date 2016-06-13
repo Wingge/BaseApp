@@ -12,6 +12,7 @@ android {
         versionName "${version_name}"
         minSdkVersion "${minSdkVersion}"
         targetSdkVersion "${targetSdkVersion}"
+
     }
     signingConfigs {
         debug {
@@ -134,7 +135,7 @@ android {
 //        disable 'OldTargetApi'
 //    }
 }
-//(为了动态flavor里实现applicationId)和每一个Flavor一一对应
+//(为了动态flavor里实现applicationId)和每一个Flavor一一对应,同时在depandencies中引用定义的分支名进行打包
 configurations {
     chinaDebugWearApp
     chinaQualityassuranceWearApp
@@ -148,14 +149,14 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     //默认，只有一个applicatinid时
     wearApp project(':wear')
-    //    //和上一条相对，在应用有多个flavor,多个applicationid时使用
-    //    //第一个和configurations一一对应,后面为每一个Flavor与buildType的组合
+    //    // china productFlavors分支下引用依赖。
     //    chinaDebugWearApp project(path: ':wear', configuration: 'chinaDebug')
     //    chinaQualityassuranceWearApp project(path: ':wear', configuration: 'chinaQualityassurance')
     //    chinaReleaseWearApp project(path: ':wear', configuration: 'chinaRelease')
     //    googleplayDebugWearApp project(path: ':wear', configuration: 'googleplayDebug')
     //    googleplayQualityassuranceWearApp project(path: ':wear', configuration: 'googleplayQualityassurance')
     //    googleplayReleaseWearApp project(path: ':wear', configuration: 'googleplayRelease')
-    //    compile "com.google.android.gms:play-services:$GooglePlayServicesClientLibraryVersion"
+//        compile "com.google.android.gms:play-services:$GooglePlayServicesClientLibraryVersion"
     compile project(':core')
+
 }
