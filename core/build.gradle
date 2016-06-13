@@ -1,0 +1,78 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.neenbedankt.android-apt' // 注释处理和dagger关联
+
+
+android {
+    //在外面的不需要$
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        version rootProject.ext.version_code
+        versionName rootProject.ext.version_name
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+
+//        minSdkVersion minSdkVersion
+//        targetSdkVersion targetSdkVersion
+//        versionCode versionCode
+//        versionName versionName
+        // dex突破65535的限制
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile rootProject.ext.libJunit
+    // Android support libraries.
+    provided rootProject.ext.libJavaxAnnotation
+    compile rootProject.ext.libSupportAppcompat
+    compile rootProject.ext.libSupportDesign
+    compile rootProject.ext.libSupportRecyclerview
+    compile rootProject.ext.libSupportV4
+    //for 突破65535的限制
+    compile rootProject.ext.libMultidex
+
+    //标注
+    apt rootProject.ext.libDaggerCompiler
+    compile rootProject.ext.libDagger
+
+    compile rootProject.ext.libRxJava
+    compile rootProject.ext.libRxAndroid
+
+    compile rootProject.ext.libRetrofit
+    compile rootProject.ext.libRetrofitConverterGson
+    compile rootProject.ext.libRetrofitAdapterRxJava
+
+    compile rootProject.ext.libGlide
+
+//    debugCompile rootProject.ext.debugDependencies.leakCanary
+//    releaseCompile rootProject.ext.releaseDependencies.leakCanary
+//    debugCompile rootProject.ext.debugDependencies.blockCanary
+//    releaseCompile rootProject.ext.releaseDependencies.blockCanary
+
+//    compile rootProject.ext.libLeanbackSupportV4
+//
+//    compile rootProject.ext.libEventBus
+//    compile rootProject.ext.libJavaxAnnotation
+//
+//    compile rootProject.ext.libGson
+//    compile rootProject.ext.libOkHttpLoggingInterceptor
+//
+//    //google 官方databinding
+//    compile rootProject.ext.libRxBinding
+//    compile rootProject.ext.libRxBindingSupportV4
+//    compile rootProject.ext.libRxBindingAppcompatV7
+//    compile rootProject.ext.libRxBindingDesign
+//    compile rootProject.ext.libRxBindingRecyclerview
+//    //orm
+//    compile rootProject.ext.libRealm
+
+}
