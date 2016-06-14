@@ -58,7 +58,6 @@ build/
 .jira-url
 atlassian-ide-plugin.xml
 
-
 #for older project format
 /*/out
 /*/*/build
@@ -66,3 +65,7 @@ atlassian-ide-plugin.xml
 *.iws
 *.ipr
 *~
+
+# HPROF
+# -----
+*.hprof
