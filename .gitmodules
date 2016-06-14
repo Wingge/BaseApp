@@ -10,3 +10,6 @@
 [submodule "base_mobile"]
 	path = base_mobile
 	url = https://github.com/Wingge/base_mobile.git
+[submodule "base_tv"]
+	path = base_tv
+	url = https://github.com/Wingge/base_tv.git
