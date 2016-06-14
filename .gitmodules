@@ -7,3 +7,6 @@
 [submodule "base_glass"]
 	path = base_glass
 	url = https://github.com/Wingge/base_glass.git
+[submodule "base_mobile"]
+	path = base_mobile
+	url = https://github.com/Wingge/base_mobile.git
