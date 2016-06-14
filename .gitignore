@@ -69,3 +69,6 @@ atlassian-ide-plugin.xml
 # HPROF
 # -----
 *.hprof
+
+#TODO 我的情况是开源的代码别人使用的是正常的https连接submodule,自己使用ssh方便维护代码(其它人应该要删除这行,避免不必要麻烦)
+.gitmodules
