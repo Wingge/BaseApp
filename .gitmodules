@@ -4,3 +4,6 @@
 [submodule "app_core"]
 	path = app_core
 	url = https://github.com/Wingge/app_core.git
+[submodule "base_glass"]
+	path = base_glass
+	url = https://github.com/Wingge/base_glass.git
