@@ -1,1 +1,1 @@
-include ':mobile', ':wear', ':tv', ':glass', ':core'
+include ':base_mobile', ':base_wear', ':base_tv', ':base_glass', ':app_core'

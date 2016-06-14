@@ -12,7 +12,10 @@ android {
         versionName "${version_name}"
         minSdkVersion "${minSdkVersion}"
         targetSdkVersion "${targetSdkVersion}"
-
+        //启用JAVA8支持
+        jackOptions {
+            enabled true
+        }
     }
     signingConfigs {
         debug {
@@ -74,26 +77,6 @@ android {
 //            consumerProguardFiles 'proguard-file.pro'
         }
 
-        applicationVariants.all { variant ->
-//            variant.outputs.each { output ->
-//                def outputFile = output.outputFile
-//                def fileName
-//                if (outputFile != null && outputFile.name.endsWith('.apk') && 'release'.equals(variant.buildType.name)) {
-//                    // 输出apk名称为bwm_v1.0_2015-01-15_wandoujia.apk
-//                    fileName = "bwm_v${defaultConfig.versionName}_${releaseTime()}_${variant.productFlavors[0].name}.apk"
-//                } else {
-//                    fileName = "bwm-${outputFile.name}"
-//                }
-//                output.outputFile = new File(outputFile.parent, fileName)
-//            }
-        }
-        // Remove mockRelease as it's not needed.
-        android.variantFilter { variant ->
-            if(variant.buildType.name.equals('release')
-                    && variant.getFlavors().get(0).name.equals('mock')) {
-                variant.setIgnore(true);
-            }
-        }
     }
 
     //注意与其它平台统一，如wear
@@ -120,8 +103,9 @@ android {
     }
 
     compileOptions {
-//        sourceCompatibility rootProject.ext.javaVersion
-//        sourceCompatibility rootProject.ext.javaVersion
+        //如果javaVersion>＝1.8，需启用JAVA8支持(看上面的defaultConfig)
+        sourceCompatibility rootProject.ext.javaVersion
+        targetCompatibility rootProject.ext.javaVersion
     }
 
 //    lintOptions {
@@ -134,6 +118,27 @@ android {
 //        // Lint gives this warning but SDK 20 would be Android L Beta.
 //        disable 'OldTargetApi'
 //    }
+
+    applicationVariants.all { variant ->
+//            variant.outputs.each { output ->
+//                def outputFile = output.outputFile
+//                def fileName
+//                if (outputFile != null && outputFile.name.endsWith('.apk') && 'release'.equals(variant.buildType.name)) {
+//                    // 输出apk名称为bwm_v1.0_2015-01-15_wandoujia.apk
+//                    fileName = "bwm_v${defaultConfig.versionName}_${releaseTime()}_${variant.productFlavors[0].name}.apk"
+//                } else {
+//                    fileName = "bwm-${outputFile.name}"
+//                }
+//                output.outputFile = new File(outputFile.parent, fileName)
+//            }
+    }
+    // Remove mockRelease as it's not needed.
+    android.variantFilter { variant ->
+        if(variant.buildType.name.equals('release')
+                && variant.getFlavors().get(0).name.equals('mock')) {
+            variant.setIgnore(true);
+        }
+    }
 }
 //(为了动态flavor里实现applicationId)和每一个Flavor一一对应,同时在depandencies中引用定义的分支名进行打包
 configurations {
@@ -148,7 +153,7 @@ configurations {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     //默认，只有一个applicatinid时
-    wearApp project(':wear')
+    wearApp project(':base_wear')
     //    // china productFlavors分支下引用依赖。
     //    chinaDebugWearApp project(path: ':wear', configuration: 'chinaDebug')
     //    chinaQualityassuranceWearApp project(path: ':wear', configuration: 'chinaQualityassurance')
@@ -157,7 +162,9 @@ dependencies {
     //    googleplayQualityassuranceWearApp project(path: ':wear', configuration: 'googleplayQualityassurance')
     //    googleplayReleaseWearApp project(path: ':wear', configuration: 'googleplayRelease')
 //        compile "com.google.android.gms:play-services:$GooglePlayServicesClientLibraryVersion"
-    compile project(':core')
+    compile project(':app_core')
+
+    compile 'com.jakewharton:butterknife:7.0.1'
 
 
 }

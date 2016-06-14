@@ -3,10 +3,10 @@ project.ext {
     version_code = 1
     version_name = '0.0.1'
     //Sdk and tools
-    minSdkVersion = 14
+    minSdkVersion = 10
     compileSdkVersion = 23
     targetSdkVersion = 23
-    buildToolsVersion = '23.0.2'
+    buildToolsVersion = '24.0.0rc4'
 
     abortOnLintError = false
     checkLintRelease = false
@@ -16,7 +16,7 @@ project.ext {
     javaVersion = JavaVersion.VERSION_1_8
 
     //App dependencies
-    supportLibraryVersion = '23.4.0'
+    supportLibraryVersion = '23.2.1'
     GooglePlayServicesClientLibraryVersion = '9.0.0'
     guavaVersion = '18.0'
     daggerVersion = "2.2"
