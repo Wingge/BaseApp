@@ -13,3 +13,6 @@
 [submodule "base_tv"]
 	path = base_tv
 	url = https://github.com/Wingge/base_tv.git
+[submodule "base_wear"]
+	path = base_wear
+	url = https://github.com/Wingge/base_wear.git
