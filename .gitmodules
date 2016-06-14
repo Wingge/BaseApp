@@ -1,3 +1,6 @@
 [submodule "android-proguard-snippets"]
 	path = android-proguard-snippets
 	url = https://github.com/krschultz/android-proguard-snippets.git
+[submodule "app_core"]
+	path = app_core
+	url = https://github.com/Wingge/app_core.git
