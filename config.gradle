@@ -3,7 +3,7 @@ project.ext {
     version_code = 1
     version_name = '0.0.1'
     //Sdk and tools
-    minSdkVersion = 10
+    minSdkVersion = 14
     compileSdkVersion = 23
     targetSdkVersion = 23
     buildToolsVersion = '24.0.0rc4'
