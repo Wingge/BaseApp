@@ -5,10 +5,10 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
 
     defaultConfig {
-        version "${version_code}"
-        versionName "${version_name}"
-        minSdkVersion "${minSdkVersion}"
-        targetSdkVersion "${targetSdkVersion}"
+        version rootProject.ext.version_code
+        versionName rootProject.ext.version_name
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
     }
     buildTypes {
         release {
@@ -21,6 +21,6 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     //虽然可能base_mobile里有引用，但经测试是不能多重继承的(即这里不引入不能编译)，所以应该把base_mobile中与这边重复的去掉
-    compile project(':app_core')
     compile project(':base_mobile')
+//    compile project(':app_core')
 }
