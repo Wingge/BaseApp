@@ -14,10 +14,14 @@ public class Fragment1 extends BaseFragment {
     protected void initViews(View view, Bundle savedInstanceState) {
         ((TextView)view.findViewById(R.id.tv_1)).setText("hehehehee Fragment1");
         getHoldingActivity().setTitle("Fragment1");
+        /**默认为空，需要时重新给值*/
+        setSubTitle("副标题");
     }
 
     @Override
     protected int getLayoutId() {
         return R.layout.fragment_test;
     }
+
+
 }

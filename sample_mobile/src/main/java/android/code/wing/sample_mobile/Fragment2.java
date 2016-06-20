@@ -14,6 +14,7 @@ public class Fragment2 extends BaseFragment {
     protected void initViews(View view, Bundle savedInstanceState) {
         ((TextView)view.findViewById(R.id.tv_1)).setText("hehehehee Fragment2");
         getHoldingActivity().setTitle("Fragment2");
+
     }
 
     @Override
