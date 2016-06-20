@@ -4,6 +4,7 @@ android {
     compileSdkVersion rootProject.ext.compileSdkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
 
+
     defaultConfig {
         version rootProject.ext.version_code
         versionName rootProject.ext.version_name
@@ -20,7 +21,14 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    //虽然可能base_mobile里有引用，但经测试是不能多重继承的(即这里不引入不能编译)，所以应该把base_mobile中与这边重复的去掉
-    compile project(':base_mobile')
-//    compile project(':app_core')
+    compile project(path: ':base_mobile')
+
+    //for 突破65535的限制
+    compile rootProject.ext.libMultidex
+//    testCompile rootProject.ext.libJunit
+//    testCompile rootProject.ext.debugDependencies.leakCanary
+//    debugCompile rootProject.ext.debugDependencies.leakCanary
+//    releaseCompile rootProject.ext.releaseDependencies.leakCanary
+
+
 }

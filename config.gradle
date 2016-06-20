@@ -50,6 +50,7 @@ project.ext {
     // explicitly depend on RxJava's latest version for bug fixes and new features.
     libRxJava = "io.reactivex:rxjava:1.1.5"
     libEventBus = "org.greenrobot:eventbus:3.0.0"
+    //注解
     libJavaxAnnotation = "javax.annotation:jsr250-api:1.0"
 
     libGson = "com.google.code.gson:gson:2.4"
