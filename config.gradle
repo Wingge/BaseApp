@@ -31,6 +31,7 @@ project.ext {
     runnerVersion = '0.4.1'
     rulesVersion = '0.4.1'
     espressoVersion = '2.2.1'
+    butterknifeVersion = '8.1.0'
 
     //libs
     libJunit = 'junit:junit:4.12'
@@ -63,6 +64,9 @@ project.ext {
     libOkHttpLoggingInterceptor = "com.squareup.okhttp3:logging-interceptor:3.0.0-RC1"
 
     //标注
+    libButterknife = "com.jakewharton:butterknife:${butterknifeVersion}"
+    libButterknifeCompiler = "com.jakewharton:butterknife-compiler:${butterknifeVersion}"
+    //依赖注入框架
     libDagger = "com.google.dagger:dagger:${daggerVersion}"
     libDaggerCompiler = "com.google.dagger:dagger-compiler:${daggerVersion}"
     //图片加载库

@@ -1,13 +1,14 @@
-package android.code.wing.sample_mobile;
+package com.code.wing.sample_mobile;
 
-import android.code.wing.baseapp.base.BaseFragmentActivity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 
+import com.code.wing.sample_mobile.base.AppActivity;
+
 /**
- * Created by Administrator on 2016/6/20 0020.
+ * TODO
  */
-public class Test4SingleFragmentActivity extends BaseFragmentActivity {
+public class Test4SingleFragmentActivity extends AppActivity {
 
     @Override
     protected void initViews(Bundle savedInstanceState) {

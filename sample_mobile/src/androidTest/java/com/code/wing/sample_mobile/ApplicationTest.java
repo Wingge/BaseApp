@@ -1,4 +1,4 @@
-package android.code.wing.sample_mobile;
+package com.code.wing.sample_mobile;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

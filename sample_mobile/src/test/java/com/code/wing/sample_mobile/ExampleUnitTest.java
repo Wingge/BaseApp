@@ -1,4 +1,4 @@
-package android.code.wing.sample_mobile;
+package com.code.wing.sample_mobile;
 
 import org.junit.Test;
 

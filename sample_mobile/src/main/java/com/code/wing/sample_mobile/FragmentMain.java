@@ -1,14 +1,15 @@
-package android.code.wing.sample_mobile;
+package com.code.wing.sample_mobile;
 
-import android.code.wing.baseapp.base.BaseFragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.code.wing.sample_mobile.base.AppFragment;
+
 /**
  * Created by Administrator on 2016/6/20 0020.
  */
-public class FragmentMain extends BaseFragment {
+public class FragmentMain extends AppFragment {
 
     @Override
     protected void initViews(View view, Bundle savedInstanceState) {

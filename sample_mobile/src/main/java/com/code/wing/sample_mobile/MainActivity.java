@@ -1,10 +1,11 @@
-package android.code.wing.sample_mobile;
+package com.code.wing.sample_mobile;
 
-import android.code.wing.baseapp.base.BaseFragmentActivity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 
-public class MainActivity extends BaseFragmentActivity{
+import com.code.wing.sample_mobile.base.AppActivity;
+
+public class MainActivity extends AppActivity {
 
 //    @Override
 //    protected Fragment initOrRestoreFragment() {
